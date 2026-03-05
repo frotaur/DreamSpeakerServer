@@ -59,7 +59,7 @@ def _file_logger(log_file):
     """Returns a log function that writes to both the file logger and the console logger."""
     def log(msg):
         logger.info(msg)
-        with open(log_file, "a") as f:
+        with open(log_file, "a", encoding="utf-8") as f:
             f.write(msg + "\n")
     return log
 
